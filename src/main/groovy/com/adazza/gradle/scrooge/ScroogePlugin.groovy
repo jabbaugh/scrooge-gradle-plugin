@@ -7,6 +7,6 @@ class ScroogePlugin implements Plugin<Project> {
 
     @Override
     void apply(final Project project) {
-        project.tasks.add("compileScrooge", ScroogeCompileTask)
+        project.tasks.create("compileScrooge", ScroogeCompileTask)
     }
 }
