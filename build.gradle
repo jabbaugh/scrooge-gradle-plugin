@@ -1,0 +1,29 @@
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'scala'
+
+apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-core.gradle'
+
+group = 'com.adazza.gradle.scrooge'
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'http://repository.codehaus.org/org/codehaus/groovy'
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile("com.twitter:scrooge-generator_2.12:4.14.0") {
+        transitive = true
+    }
+
+    compile("org.scala-lang:scala-library:2.12.1") {
+        transitive = true
+    }
+}
