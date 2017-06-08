@@ -1,10 +1,4 @@
-
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'scala'
-
-//apply from: 'file:///Users/danielbarajas/adazza-repos/adazza-gradle/adazza-scala.gradle'
-apply from: 'file:///Users/danielbarajas/adazza-repos/adazza-gradle/adazza-core.gradle'
+apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-core.gradle'
 
 group = 'com.adazza.gradle.scrooge'
 
@@ -18,11 +12,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile("com.twitter:scrooge-generator_2.12:4.14.0") {
+    compile("com.twitter:scrooge-generator_$scalaVersion:4.14.0") {
         transitive = true
     }
-    compile("org.scala-lang:scala-library:2.12.1") {
-        transitive = true
-    }
-    compile localGroovy()
 }
