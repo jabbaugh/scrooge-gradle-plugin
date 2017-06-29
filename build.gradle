@@ -1,18 +1,14 @@
 apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-core.gradle'
+apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-dependency-management.gradle'
 
 group = 'com.adazza.gradle.scrooge'
 
 repositories {
-    mavenCentral()
-    mavenLocal()
-    maven {
-        url 'http://repository.codehaus.org/org/codehaus/groovy'
-    }
+  mavenCentral()
+  mavenLocal()
 }
 
 dependencies {
-    compile gradleApi()
-    compile("com.twitter:scrooge-generator_$scalaVersion:4.14.0") {
-        transitive = true
-    }
+  compile gradleApi()
+  compile "com.twitter:scrooge-generator_$scalaVersion"
 }
