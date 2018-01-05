@@ -1,4 +1,4 @@
-package com.adazza.gradle.scrooge
+package com.jabbaugh.gradle.scrooge
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

@@ -1,8 +1,16 @@
-apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-core.gradle'
-apply from: 'https://raw.githubusercontent.com/adazza/adazza-gradle/master/adazza-dependency-management.gradle'
+// Define plugins for various functionality
+plugins {
+  id 'idea'
+  id 'eclipse'
+  id 'maven'
+  id 'scala'
+  id 'jacoco'
+}
 
-group = 'com.adazza.gradle.scrooge'
+//Finagle
+group = 'com.jabbaugh.gradle.scrooge'
 
+// apply plugin: io.spring.gradle.dependencymanagement.DependencyManagementPlugin
 repositories {
   mavenCentral()
   mavenLocal()
@@ -10,5 +18,8 @@ repositories {
 
 dependencies {
   compile gradleApi()
-  compile "com.twitter:scrooge-generator_$scalaVersion"
+  compile "com.twitter:finagle-core_$scalaVersion:17.12.0"
+  compile "com.twitter:finagle-thrift_$scalaVersion:17.12.0"
+  compile "com.twitter:scrooge-generator_$scalaVersion:17.12.0"
 }
+

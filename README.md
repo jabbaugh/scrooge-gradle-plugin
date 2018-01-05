@@ -11,3 +11,14 @@ compileScrooge {
     opts = ["--finagle"]
 }
 ```
+
+## Build
+```
+./gradlew clean build
+```
+
+## Install
+```
+./gradlew clean build install
+```
+
